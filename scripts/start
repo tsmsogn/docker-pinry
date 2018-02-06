@@ -21,6 +21,12 @@ then
     sed -i "s/PUBLIC = True/PUBLIC = False/" /srv/www/pinry/pinry/settings/__init__.py
 fi
 
+# Set the maximum allowed size of the client request body.
+if [ "$CLIENT_MAX_BODY_SIZE" ]
+then
+    sed -i "s/client_max_body_size 1m/client_max_body_size ${CLIENT_MAX_BODY_SIZE}/" /etc/nginx/nginx.conf
+fi
+
 # Check for secret key if one doesn't exist create.
 if [ ! -f /data/production_secret_key.txt ]
 then

@@ -65,6 +65,7 @@ Notes on the run commands
 * ``-p`` is the port it connects to, ``-p=host_port:docker_port``
 * ``-e ALLOW_NEW_REGISTRATIONS=true`` enables people from creating new accounts. Defaults ``false``
 * ``-e PRIVATE=true`` forces users to login before seeing any pins. Defaults ``false``
+* ``-e CLIENT_MAX_BODY_SIZE=1m`` Set the maximum allowed size of the client request body. Defaults ``1m``
 
 Using docker-pinry
 ------------------
